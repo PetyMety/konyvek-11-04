@@ -21,13 +21,14 @@ export class BooksController {
         return this.booksService.create(createBookDto);
     }
 
-    @Delete(':id')
-    remove(@Param('id') id: number) {
-        this.booksService.delete(id);
-    }
-
     @Patch(':id')
     update(@Param('id') id: number, @Body() updateBookDto: Partial<CreateBookDto>) {
         return this.booksService.update(id, updateBookDto);
+    }
+
+    @Delete(':id')
+    remove(@Param('id') id: number) {
+        this.booksService.remove(id);
+        return { statusCode: 204, message: 'No Content' };
     }
 }

@@ -6,6 +6,36 @@ export class BooksService {
     private books = [];
     private nextId = 1;
 
+    constructor() {
+        // Példa könyvek 
+        this.books.push({
+            id: this.nextId++,
+            title: 'A Gyűrűk Ura',
+            author: 'J.R.R. Tolkien',
+            isbn: '978-963-08-1234-5',
+            publishYear: 1954,
+            reserved: false,
+        });
+
+        this.books.push({
+            id: this.nextId++,
+            title: '1984',
+            author: 'George Orwell',
+            isbn: '978-963-08-5678-9',
+            publishYear: 1949,
+            reserved: false,
+        });
+
+        this.books.push({
+            id: this.nextId++,
+            title: 'A Szél neve',
+            author: 'Patrick Rothfuss',
+            isbn: '978-963-08-9876-5',
+            publishYear: 2007,
+            reserved: false,
+        });
+    }
+
     findAll() {
         return this.books;
     }

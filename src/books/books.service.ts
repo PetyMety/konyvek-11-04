@@ -53,7 +53,7 @@ export class BooksService {
   }
 
   findOne(id: number): Book {
-      const book = this.books.find(b => b.id === id);
+      const book = this.books.find(b => b.id == id);
       if (!book) {
           throw new NotFoundException(`Book with ID ${id} not found`);
       }
@@ -76,7 +76,7 @@ export class BooksService {
   }
 
   remove(id: number): void {
-      const index = this.books.findIndex(b => b.id === id);
+      const index = this.books.findIndex(b => b.id == id);
       if (index === -1) {
           throw new NotFoundException(`Book with ID ${id} not found`);
       }
